@@ -1,0 +1,55 @@
+{
+  "name": "caligo-lang",
+  "version": "0.1.0",
+  "description": "Caligo — a tiny scripting language with pipes, pattern matching and a zero-dependency playground.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "caligo": "./bin/caligo.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "examples",
+    "docs",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node scripts/test.js",
+    "test:node": "node --test test/",
+    "dev": "node scripts/serve.js",
+    "build:examples": "node scripts/build-examples.js",
+    "build:site": "node scripts/build-examples.js && node scripts/build-site.js",
+    "docs:builtins": "node scripts/gen-builtins-doc.js",
+    "repl": "node bin/caligo.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "language",
+    "interpreter",
+    "scripting",
+    "playground",
+    "pattern-matching",
+    "pipes",
+    "education",
+    "zero-dependency"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhhjdjj/caligo.git"
+  },
+  "homepage": "https://jhhjdjj.github.io/caligo/",
+  "bugs": {
+    "url": "https://github.com/jhhjdjj/caligo/issues"
+  }
+}
