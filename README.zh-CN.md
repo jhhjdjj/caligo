@@ -142,6 +142,10 @@ match things {
 
 ## Playground
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Caligo Playground：左侧编辑器，右侧输出" width="920" />
+</p>
+
 Playground 就是同一套解释器跑在浏览器里：
 
 - 语法高亮直接来自真正的词法分析器，而不是另写一套规则；

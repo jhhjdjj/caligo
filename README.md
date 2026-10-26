@@ -147,6 +147,10 @@ page: [docs/builtins.md](docs/builtins.md).
 
 ## The playground
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="The Caligo playground: editor on the left, output on the right" width="920" />
+</p>
+
 The playground is the same interpreter running in your browser:
 
 - syntax highlighting produced by the real lexer (not a second grammar);
