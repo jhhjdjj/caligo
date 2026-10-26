@@ -1,0 +1,15 @@
+// title: Hello, Caligo
+// description: Values, string interpolation and a map.
+let name = "world"
+print("hello, ${name}!")
+print("2 + 3 = ${2 + 3}")
+
+let caligo = {
+  name: "Caligo",
+  kind: "language",
+  tags: ["tiny", "readable", "batteries-included"],
+}
+
+print("${caligo.name} is a ${caligo.kind}.")
+print("tags: ${caligo.tags}")
+print("first tag: ${caligo.tags[0]}")

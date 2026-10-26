@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caligo — a tiny scripting language</title>
+    <meta
+      name="description"
+      content="Caligo is a small, readable scripting language with pipes, pattern matching and a live playground. Zero dependencies, runs in your browser."
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="Caligo — a tiny scripting language" />
+    <meta
+      property="og:description"
+      content="A small, readable scripting language with pipes, pattern matching and a zero-dependency playground."
+    />
+    <link rel="icon" href="web/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="web/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">
+        <img class="brand-logo" src="web/logo.svg" alt="" width="30" height="30" />
+        <span class="brand-name">caligo</span>
+        <span class="brand-tagline">a tiny scripting language</span>
+      </a>
+      <nav class="site-nav" aria-label="Site">
+        <span class="version-pill" id="version">v0.1.0</span>
+        <a id="docs-link" href="docs/language.md">Docs</a>
+        <a id="repo-link" href="README.md">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="workspace">
+      <section class="pane editor-pane" aria-label="Editor">
+        <div class="toolbar">
+          <button class="button primary" id="run" type="button">
+            <span class="run-icon" aria-hidden="true">▶</span> Run
+            <kbd class="shortcut">Ctrl ↵</kbd>
+          </button>
+          <label class="select-label">
+            <span>Examples</span>
+            <select id="examples" aria-label="Load an example"></select>
+          </label>
+          <button class="button ghost" id="share" type="button">Share</button>
+        </div>
+
+        <div class="editor-shell">
+          <div class="gutter" id="gutter" aria-hidden="true">
+            <div class="gutter-inner" id="gutter-inner"></div>
+          </div>
+          <div class="code-area">
+            <pre class="highlight" id="highlight" aria-hidden="true"><code></code></pre>
+            <textarea
+              id="editor"
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              wrap="off"
+              aria-label="Caligo source code"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="statusbar">
+          <span id="cursor">line 1, column 1</span>
+          <span id="timing">ready</span>
+        </div>
+      </section>
+
+      <section class="pane result-pane" aria-label="Results">
+        <div class="tabs" role="tablist" aria-label="Result views">
+          <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="output">
+            Output
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="trace">Trace</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="ast">AST</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="builtins">
+            Builtins
+          </button>
+        </div>
+
+        <div class="panel is-active" id="panel-output" data-panel="output" role="tabpanel">
+          <div class="output" id="output"></div>
+        </div>
+
+        <div class="panel" id="panel-trace" data-panel="trace" role="tabpanel" hidden>
+          <div class="trace" id="trace">
+            <div class="trace-vars" id="trace-vars">Run the program to record its steps.</div>
+            <div class="trace-list" id="trace-list"></div>
+            <p class="trace-note" id="trace-note" hidden></p>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-ast" data-panel="ast" role="tabpanel" hidden>
+          <pre class="ast" id="ast"></pre>
+        </div>
+
+        <div class="panel" id="panel-builtins" data-panel="builtins" role="tabpanel" hidden>
+          <div class="builtins-toolbar">
+            <input id="builtin-filter" type="search" placeholder="Filter builtins…" aria-label="Filter builtins" />
+          </div>
+          <div class="builtins" id="builtins"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Zero dependencies · MIT license</span>
+      <span class="footer-links">
+        <a href="README.md">README</a>
+        <a href="docs/design.md">How it works</a>
+      </span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="web/app.js"></script>
+  </body>
+</html>

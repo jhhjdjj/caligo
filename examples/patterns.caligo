@@ -1,0 +1,17 @@
+// title: Pattern matching
+// description: Match on literals, lists with a rest pattern, and maps.
+fn describe(value) {
+  match value {
+    nil => "nothing",
+    [] => "an empty list",
+    [only] => "one item: ${only}",
+    [first, ...rest] => "${first} and ${len(rest)} more",
+    { kind: k } => "a thing of kind ${k}",
+    _ => "something else"
+  }
+}
+
+let samples = [nil, [], [42], [1, 2, 3], { kind: "book" }, 7]
+for sample in samples {
+  print("${sample} -> ${describe(sample)}")
+}

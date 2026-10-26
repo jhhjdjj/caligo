@@ -1,0 +1,13 @@
+// title: Pipelines
+// description: Data flows through |> where each step receives the value as its first argument.
+let words = ["wheat", "barley", "rice", "a", "of", "millet"]
+
+let long = words
+  |> filter(fn(word) { len(word) > 3 })
+  |> map(fn(word) { upper(word) })
+  |> sort()
+
+print(long)
+
+let letters = words |> map(len) |> reduce(0, fn(total, n) { total + n })
+print("total letters: ${letters}")

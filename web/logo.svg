@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Caligo">
+  <defs>
+    <linearGradient id="grain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8d982" />
+      <stop offset="0.55" stop-color="#e9b84a" />
+      <stop offset="1" stop-color="#c98f2b" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#grain)" />
+  <rect x="17" y="14" width="5" height="19" rx="2.5" fill="#191207" />
+  <path
+    d="M28 15.5 38.5 24.5 28 33.5"
+    fill="none"
+    stroke="#191207"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M14 43c4.5-3 9-3 13.5 0s9 3 13.5 0 6-2.4 9-1.2"
+    fill="none"
+    stroke="#191207"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    opacity="0.55"
+  />
+  <path
+    d="M16 51c4-2.6 8-2.6 12 0s8 2.6 12 0"
+    fill="none"
+    stroke="#191207"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    opacity="0.32"
+  />
+</svg>

@@ -1,0 +1,12 @@
+// title: Word count
+// description: Build a map with put/get, then loop over its entries.
+let text = "the quick brown fox jumps over the lazy dog the fox"
+let counts = {}
+
+for word in split(text, " ") {
+  counts = put(counts, word, get(counts, word, 0) + 1)
+}
+
+for word, count in counts {
+  print("${word}: ${count}")
+}

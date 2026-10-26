@@ -1,0 +1,9 @@
+// title: Fibonacci
+// description: Recursion, and a function body whose last expression is the result.
+fn fib(n) {
+  if n < 2 { n } else { fib(n - 1) + fib(n - 2) }
+}
+
+for n in range(12) {
+  print("fib(${n}) = ${fib(n)}")
+}

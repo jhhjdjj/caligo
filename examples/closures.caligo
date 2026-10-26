@@ -1,0 +1,15 @@
+// title: Closures
+// description: Functions capture their scope, so a counter keeps its own state.
+fn makeCounter(start) {
+  let n = start
+  fn() {
+    n = n + 1
+    n
+  }
+}
+
+let tick = makeCounter(10)
+print(tick(), tick(), tick())
+
+let other = makeCounter(0)
+print("independent:", other(), tick())
